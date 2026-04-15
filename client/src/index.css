@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  --gold-primary: #f59e0b;
+  --gold-secondary: #d97706;
+  --charcoal: #121212;
+  --dark-surface: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-800 dark:bg-[#0a0a0a] dark:text-slate-200 antialiased font-sans overflow-x-hidden transition-colors duration-500;
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.03), transparent 25%),
+      radial-gradient(circle at 90% 90%, rgba(14, 165, 233, 0.03), transparent 25%);
+    background-attachment: fixed;
+  }
+  .dark body {
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.08), transparent 30%),
+      radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.08), transparent 30%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/80 dark:bg-black/40 backdrop-blur-2xl border border-slate-200 dark:border-white/5 shadow-xl;
+  }
+
+  .card-surface {
+    @apply bg-white dark:bg-white/[0.03] backdrop-blur-3xl border border-slate-200 dark:border-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-none rounded-3xl p-6 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden;
+  }
+
+  .premium-card {
+    @apply bg-white dark:bg-[#121212]/90 backdrop-blur-3xl border border-slate-200 dark:border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-none rounded-[2rem] overflow-hidden;
+  }
+
+  .gold-text {
+    @apply bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent dark:from-amber-200 dark:via-amber-400 dark:to-amber-600;
+  }
+
+  .btn-premium {
+    @apply relative overflow-hidden bg-slate-900 dark:bg-gradient-to-r dark:from-amber-500 dark:to-amber-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3;
+  }
+
+  .input-field {
+    @apply w-full border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-white/5 rounded-2xl px-5 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all duration-300 placeholder:text-slate-400 dark:placeholder:text-slate-600;
+  }
+}
+
+
+.tech-grid {
+  background-image: radial-gradient(circle at 2px 2px, rgba(245,158,11,0.05) 1px, transparent 0);
+  background-size: 30px 30px;
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
